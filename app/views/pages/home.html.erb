@@ -1,11 +1,17 @@
+<% if user_signed_in? %>
+	<h1> You're logged the F in. Nice work. </h1>
+<%else%>
+
+
 <div class="hero-unit">
 
-	<h1>So Excited!</h1>
+	<h1>This is F@cking Awesome!!</h1>
 	<p>
 		Home page. Got'em
 		<%= link_to "One Month Rails", "http://onemonthrails.com" %>
 	</p>
 	<p>
-		<%= link_to "Sign Up Now!", "#", class: "btn btn-primary btn-large" %>
+		<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
 	</p>
 </div>
+<% end %>
