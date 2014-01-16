@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.order("created_at desc") #shows newest pics first
+    @pins = Pin.order("created_at desc").page(params[:page]).per_page(20) #shows newest pics first
     # TO show only user's pins, use: @pins = current_user.pins.all
 
     respond_to do |format|
